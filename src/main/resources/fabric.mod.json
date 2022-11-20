@@ -1,29 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "bclientapi",
   "version": "${version}",
 
-  "name": "Example Mod",
+  "name": "bclientapi",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Me!"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://fabricmc.net/"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/bclientapi/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "me.twimii.bclientapi.BClientAPI"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "bclientapi.mixins.json"
   ],
 
   "depends": {
