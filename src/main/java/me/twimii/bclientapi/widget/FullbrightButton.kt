@@ -17,7 +17,4 @@ class FullbrightButton : SimpleButtonWidget() {
     override fun wasClicked() {
         GammaController.customGamma = !GammaController.customGamma
     }
-
-
-
 }

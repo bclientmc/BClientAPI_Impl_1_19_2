@@ -14,7 +14,7 @@ open class SimpleModuleScreen(title: Text, private val widget: IWidget) : BClien
     private var finishedEvents: MutableList<String> = mutableListOf()
     var position: Vector2f = Vector2f(0f, 0f)
     private var pausesGame = false
-
+    var isSetup: Boolean = false
     override fun shouldPause(): Boolean {
         return pausesGame
     }
@@ -56,6 +56,10 @@ open class SimpleModuleScreen(title: Text, private val widget: IWidget) : BClien
 
 
     override fun init() {
+        super.init()
+        if (isSetup)
+            return
+        isSetup = true
         ClientTickEvents.END_CLIENT_TICK.register() {
             renderEvents.removeIf {
                 val (eventName, ticks) = it
@@ -67,6 +71,5 @@ open class SimpleModuleScreen(title: Text, private val widget: IWidget) : BClien
             }
         }
         widget.setup(this)
-        super.init()
     }
 }
